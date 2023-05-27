@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <h1>SISTEMA DE GESTIÓN MÉDICA</h1>
+<header>Actualizar datos de usuario</header>
+    <div>
+    <style>
+       
+
+       form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 400px;
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+header{
+    margin: 0 auto;
+  width: 300px;
+  text-decoration: solid;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* Uniform text field size */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Match form field borders */
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Additional highlight for focused elements */
+  border-color: #000;
+}
+
+textarea {
+  /* Align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* Provide space to type some text */
+  height: 5em;
+}
+
+.button {
+  /* Align buttons with the text fields */
+  padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: 8.5em;
+}
+footer{
+    align-content: center;
+
+}
+      </style>
+</header>
+<nav></nav>
+
+<body>
+    <h1>     </h1>
+    <section></section>
+<aside></aside>
+<form action="/my-handling-form-page" method="post">
+    <ul>
+        <li>
+            <label for="id">ID:</label>
+            <input type="text" id="id" RFC="user_ID" />
+          </li>
+          <p></p>
+      <li>
+        <label for="nombre">Nombres(s):</label>
+        <input type="text" id="nombre" RFC="user_nombre" />
+      </li>
+      <p></p>
+      <li>
+        <label for="AP">Apellido Paterno:</label>
+        <input type="text" id="AP" name="user_AP" />
+      </li>
+      <p></p>
+      <li>
+        <label for="AM">Apellido Materno:</label>
+        <input type="text" id="AM" name="user_AM" />
+      </li>
+      <p></p>
+      <li>
+        <label for="CP">Cédula Profesional:</label>
+        <input type="text" id="CP" name="user_CP" />
+      </li>
+      <p></p>
+      <li>
+        <label for="pass">Contraseña:</label>
+        <input type="text" id="pass" name="user_pass" />
+      </li>
+      <p></p>
+      <li>
+        <label for="CE">Correo electrónico:</label>
+        <input type="text" id="CE" name="user_CE" />
+      </li>
+      <p></p>
+      <li>
+        <label for="rol">Rol:</label>
+        <input type="text" id="rol" name="user_rol" />
+      </li>
+    
+      <p></p>
+      <p></p>
+      <p></p>
+      <class="button">
+        <button type="submit">GUARDAR</button>
+        <class="button">
+            <button type="submit">CANCELAR</button>
+           
+      
+    </ul>
+  </form>
+  
+</body>
+</div>
+<footer>Todos los derechos reservados 2023</footer>
+</html>
