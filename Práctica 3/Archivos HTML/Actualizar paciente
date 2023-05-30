@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title> Registrar usuario </title>
+  <title> Actualizar paciente </title>
    
 <header id="header01">
   <h2>SISTEMA DE GESTIÓN MÉDICA</h2>
-  <h3>Registrar usuario</h3>
+  <h3>Actualizar datos paciente</h3>
 </header>
     <div>
     <style>
@@ -32,6 +32,9 @@
     margin-top: 10px;
     }
 
+    #div2{
+               color:rgb(33, 2, 75) ;
+    }
 #footer{
     text-align: center;
     color: black;
@@ -43,13 +46,14 @@
 <body id=bodyint>
    <div id="divform">
 <form action="/my-handling-form-page" method="post">
-    <ul>
-      
-        <label for="nombre">Nombres(s):</label>
-        <input type="text" id="nombre" RFC="user_nombre" />
-      
+    <ul>   
       <p></p>
       
+      <label for="paciente">Nombre del paciente:</label>
+        <input type="text" id="paciente" paciente="user_paciente" />
+      
+      <p></p>
+
         <label for="AP">Apellido Paterno:</label>
         <input type="text" id="AP" name="user_AP" />
      
@@ -60,33 +64,41 @@
       
       <p></p>
       
-        <label for="CP">Cédula Profesional:</label>
-        <input type="text" id="CP" name="user_CP" />
+        <label for="FN">Fecha nacimiento:</label>
+        <input type="text" id="FN" FN="user_FN" />
       
       <p></p>
-      
-        <label for="pass">Contraseña:</label>
-        <input type="password" id="pass" name="user_pass" />
+    </div>
+    <div id="div2">
+        <p></p>
+        <h4>Datos opcionales</h4>
+    </div>
+    <div id="divform">
+        <p></p>
+      <p></p>
+        <label for="EC">Enfermedades crónicas:</label>
+        <input type="text" id="EC" EC="user_EC" />
       
       <p></p>
      
-        <label for="CE">Correo electrónico:</label>
-        <input type="text" id="CE" name="user_CE" />
+        <label for="AL">Alergias:</label>
+        <input type="text" id="AL" AL="user_AL" />
      
       <p></p>
       
-        <label for="rol">Rol:</label>
-        <input type="text" id="rol" name="user_rol" />
+        <label for="AF">Antecedentes familiares:</label>
+        <input type="text" id="AF" AF="user_AF" />
       
     
       <p></p>
       <p></p>
       <p></p>
       <class="button">
-        <button type="submit">GUARDAR</button>
+               <button type="submit">GUARDAR</button>
         <class="button">
             <button type="submit">CANCELAR</button>
-           
+            <p></p>
+            <p></p>  
       
     </ul>
   </form>

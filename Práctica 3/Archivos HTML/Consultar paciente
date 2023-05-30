@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title> Registrar usuario </title>
+  <title> Consultar paciente </title>
    
 <header id="header01">
   <h2>SISTEMA DE GESTIÓN MÉDICA</h2>
-  <h3>Registrar usuario</h3>
+  <h3>Consultar paciente</h3>
 </header>
     <div>
     <style>
@@ -38,15 +38,25 @@
 }
       </style>
 </header>
-<nav></nav>
+
 
 <body id=bodyint>
    <div id="divform">
 <form action="/my-handling-form-page" method="post">
+    <nav>
     <ul>
+        <p></p>
+<H4> Consultar paciente</H4>
+<p></p>
+        <label for="exp">Expediente:</label>
+        <input type="text" id="exp" name="user_exp" />
       
-        <label for="nombre">Nombres(s):</label>
-        <input type="text" id="nombre" RFC="user_nombre" />
+      <p></p>        
+
+
+<p></p>
+        <label for="nombre">Nombres (s):</label>
+        <input type="text" id="nombre" name="user_nombre" />
       
       <p></p>
       
@@ -60,35 +70,31 @@
       
       <p></p>
       
-        <label for="CP">Cédula Profesional:</label>
-        <input type="text" id="CP" name="user_CP" />
+        <label for="FN">Fecha nacimiento:</label>
+        <input type="text" id="FN" name="user_FN" />
       
       <p></p>
       
-        <label for="pass">Contraseña:</label>
-        <input type="password" id="pass" name="user_pass" />
+        <label for="EC">Enfermedades crónicas:</label>
+        <input type="text" id="EC" name="user_EC" />
       
       <p></p>
      
-        <label for="CE">Correo electrónico:</label>
-        <input type="text" id="CE" name="user_CE" />
+        <label for="AL">Alergias:</label>
+        <input type="text" id="AL" name="user_AL" />
      
       <p></p>
-      
-        <label for="rol">Rol:</label>
-        <input type="text" id="rol" name="user_rol" />
-      
-    
+          
       <p></p>
       <p></p>
       <p></p>
       <class="button">
-        <button type="submit">GUARDAR</button>
-        <class="button">
-            <button type="submit">CANCELAR</button>
+        <button type="submit">CONSULTAR</button>
+    
            
       
-    </ul>
+    </ul>  
+</nav>
   </form>
 </div>
 </body>

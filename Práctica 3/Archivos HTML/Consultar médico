@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title> Registrar usuario </title>
+  <title> Consultar médico </title>
    
 <header id="header01">
   <h2>SISTEMA DE GESTIÓN MÉDICA</h2>
-  <h3>Registrar usuario</h3>
+  <h3>Consultar médico</h3>
 </header>
     <div>
     <style>
@@ -38,15 +38,18 @@
 }
       </style>
 </header>
-<nav></nav>
+
 
 <body id=bodyint>
    <div id="divform">
 <form action="/my-handling-form-page" method="post">
+    <nav>
     <ul>
-      
+        <p></p>
+<H4> Consultar médicos </H4>
+        <p></p>
         <label for="nombre">Nombres(s):</label>
-        <input type="text" id="nombre" RFC="user_nombre" />
+        <input type="text" id="nombre" name="user_nombre" />
       
       <p></p>
       
@@ -83,12 +86,12 @@
       <p></p>
       <p></p>
       <class="button">
-        <button type="submit">GUARDAR</button>
-        <class="button">
-            <button type="submit">CANCELAR</button>
+        <button type="submit">CONSULTAR</button>
+    
            
       
-    </ul>
+    </ul>  
+</nav>
   </form>
 </div>
 </body>

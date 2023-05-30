@@ -1,14 +1,14 @@
 
 
 <html>
-    <title> Inicio de sesión </title>
+    <title> Eliminar médico </title>
     <link href="Estilos.css" rel="stylesheet">
 <body id="bodyint">
  <header id="header01">
          <h2> SISTEMA DE GESTIÓN MÉDICA </h2>
-         <h3> Iniciar sesión </h3>
+         <h3> Eliminar médico </h3>
          <style>
-            #bodyint{
+                        #bodyint{
     background-color: whitesmoke;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
@@ -44,19 +44,15 @@
     <form action="/my-handling-form-page" method="post">
         <ul>
          
-            <label for="RFC">RFC:</label>
-            <input type="text" id="RFC" RFC="user_RFC" />
+            <label for="ID">ID:</label>
+            <input type="text" id="ID" ID="user_ID" />
           
           <p></p>
-          
-            <label for="Contraseña">Contraseña:</label>
-            <input type="password" id="Contraseña" name="user_Contraseña" />
-          
-        
+              
           <p></p>
           <p></p>
           <class="button">
-            <button type="submit">ENTRAR</button>
+            <button type="submit">ELIMINAR</button>
             <class="button">
                 <button type="submit">CANCELAR</button>
                

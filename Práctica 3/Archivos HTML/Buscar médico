@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title> Registrar usuario </title>
+  <title> Buscar médico </title>
    
 <header id="header01">
   <h2>SISTEMA DE GESTIÓN MÉDICA</h2>
-  <h3>Registrar usuario</h3>
+  <h3>Buscar médico</h3>
 </header>
     <div>
     <style>
@@ -38,42 +38,49 @@
 }
       </style>
 </header>
-<nav></nav>
+
 
 <body id=bodyint>
    <div id="divform">
 <form action="/my-handling-form-page" method="post">
+    <nav>
     <ul>
+        <h4>Búsqueda de médicos</h4> 
+        <p></p>
+        <label for="RFC">RFC:</label>
+        <input type="text" id="nombre" name="user_RFC" />
       
+      
+
         <label for="nombre">Nombres(s):</label>
-        <input type="text" id="nombre" RFC="user_nombre" />
+        <input type="text" id="nombre" name="user_nombre" />
       
-      <p></p>
+     
       
         <label for="AP">Apellido Paterno:</label>
         <input type="text" id="AP" name="user_AP" />
      
-      <p></p>
+      
       
         <label for="AM">Apellido Materno:</label>
         <input type="text" id="AM" name="user_AM" />
       
-      <p></p>
+        <p></p>
       
         <label for="CP">Cédula Profesional:</label>
         <input type="text" id="CP" name="user_CP" />
       
-      <p></p>
+     
       
         <label for="pass">Contraseña:</label>
         <input type="password" id="pass" name="user_pass" />
       
-      <p></p>
+   
      
         <label for="CE">Correo electrónico:</label>
         <input type="text" id="CE" name="user_CE" />
      
-      <p></p>
+    
       
         <label for="rol">Rol:</label>
         <input type="text" id="rol" name="user_rol" />
@@ -83,12 +90,12 @@
       <p></p>
       <p></p>
       <class="button">
-        <button type="submit">GUARDAR</button>
-        <class="button">
-            <button type="submit">CANCELAR</button>
+        <button type="submit">BUSCAR MÉDICO </button>
+    
            
       
-    </ul>
+    </ul>  
+</nav>
   </form>
 </div>
 </body>

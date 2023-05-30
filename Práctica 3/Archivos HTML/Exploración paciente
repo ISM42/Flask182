@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title> Registrar usuario </title>
+  <title> Exploración paciente </title>
    
 <header id="header01">
   <h2>SISTEMA DE GESTIÓN MÉDICA</h2>
-  <h3>Registrar usuario</h3>
+  <h3>Exploración paciente</h3>
 </header>
     <div>
     <style>
@@ -32,6 +32,9 @@
     margin-top: 10px;
     }
 
+    #div2{
+               color:rgb(33, 2, 75) ;
+    }
 #footer{
     text-align: center;
     color: black;
@@ -45,40 +48,49 @@
 <form action="/my-handling-form-page" method="post">
     <ul>
       
-        <label for="nombre">Nombres(s):</label>
-        <input type="text" id="nombre" RFC="user_nombre" />
+        <label for="fecha">Fecha:</label>
+        <input type="text" id="fecha" medico="user_fecha" />
       
       <p></p>
       
-        <label for="AP">Apellido Paterno:</label>
-        <input type="text" id="AP" name="user_AP" />
+      <label for="peso">Peso:</label>
+        <input type="text" id="peso" paciente="user_peso" />
+      
+      <p></p>
+
+        <label for="altura">Altura:</label>
+        <input type="text" id="altura" name="user_altura" />
      
       <p></p>
       
-        <label for="AM">Apellido Materno:</label>
-        <input type="text" id="AM" name="user_AM" />
+        <label for="temperatura">Temperatura:</label>
+        <input type="text" id="temperatura" name="user_temperatura" />
       
       <p></p>
       
-        <label for="CP">Cédula Profesional:</label>
-        <input type="text" id="CP" name="user_CP" />
-      
-      <p></p>
-      
-        <label for="pass">Contraseña:</label>
-        <input type="password" id="pass" name="user_pass" />
-      
-      <p></p>
-     
-        <label for="CE">Correo electrónico:</label>
-        <input type="text" id="CE" name="user_CE" />
-     
-      <p></p>
-      
-        <label for="rol">Rol:</label>
-        <input type="text" id="rol" name="user_rol" />
+        <label for="fc">Fc:</label>
+        <input type="text" id="fc" FN="user_fc" />
       
     
+    <div id="divform">
+      <p></p>
+      <p></p>
+        <label for="freccard">Frecuencia cardiaca:</label>
+        <input type="text" id="freccard" EC="user_freccard" />
+      
+      <p></p>
+     
+        <label for="ox">SpO2:</label>
+        <input type="text" id="ox" AL="user_ox" />
+     
+      <p></p>
+      
+        <label for="gluc">Glucosa:</label>
+        <input type="text" id="gluc" AF="user_gluc" />
+      
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" AF="user_edad" />
+
       <p></p>
       <p></p>
       <p></p>
@@ -87,7 +99,8 @@
         <class="button">
             <button type="submit">CANCELAR</button>
            
-      
+            <p></p>
+      <p></p>
     </ul>
   </form>
 </div>
