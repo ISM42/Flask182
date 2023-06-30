@@ -19,7 +19,13 @@ mysql= MySQL(app)
 #la ruta se compone de nombre y la función que va ejecutar
 @app.route('/') ##declarar la ruta y el nombre. La diagonal es por default. Es la primera ruta que el servidor va a buscar
 def index():
-    return render_template('index.html')
+    curSelect=mysql.connection.cursor()
+    curSelect.execute('select * from albums')
+    #creamos la variable consulta para crear la lista que se va a desplegar en vista
+    consulta=curSelect.fetchall()
+    #print(consulta)
+
+    return render_template('index.html',listAlbums=consulta)
 #cada ruta lleva su ruta y su función.
 #con el método, la ruta va a atrapar la información por método POST, las rutas que no declaren el método usarán GET de forma predeterminada.
 @app.route('/guardar',methods=['POST']) ##Una segunda ruta o más ya pueden tener otros nombres.
