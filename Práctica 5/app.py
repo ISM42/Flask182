@@ -22,7 +22,7 @@ def index():
     curSelect=mysql.connection.cursor()
     curSelect.execute('select * from albums')
     #creamos la variable consulta para crear la lista que se va a desplegar en vista
-    consulta=curSelect.fetchall()
+    consulta=curSelect.fetchall() #fetchall para jalar la lista completa de registros
     #print(consulta)
 
     return render_template('index.html',listAlbums=consulta)
@@ -42,6 +42,28 @@ def guardar():
     flash('Album agregado correctamente')
     return redirect(url_for('index'))
      
+@app.route('/editar/<id>') 
+def editar(id):
+    curEditar=mysql.connection.cursor()
+    curEditar.execute('select * from albums where id = %s',(id,))
+    consulId=curEditar.fetchone() #fetchone porque solo vamos a jalar un solo registro
+    return render_template('editarAlbum.html',album=consulId)
+
+@app.route('/actualizar/<id>',methods=['POST']) 
+def actualizar(id): 
+   if request.method == 'POST':
+        Vtitulo=request.form['txtTitulo']
+        Vartista=request.form['txtArtista']
+        Vanio=request.form['txtAnio']
+
+        curAct=mysql.connection.cursor()
+        curAct.execute=('update albums set titulo=%s, artista=%s, anio=%s where id = %s', (Vtitulo, Vartista, Vanio,id))
+        mysql.connection.commit()
+
+        flash('Album actualizado en la base de datos correctamente')
+        return redirect(url_for('index'))
+     
+
 
 @app.route('/eliminar') 
 def eliminar():
