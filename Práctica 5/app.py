@@ -42,6 +42,7 @@ def guardar():
     flash('Album agregado correctamente')
     return redirect(url_for('index'))
      
+#ruta para enviar a la vista "editarAlbum y que se muestre el registro a modificar"     
 @app.route('/editar/<id>') 
 def editar(id):
     curEditar=mysql.connection.cursor()
@@ -49,6 +50,7 @@ def editar(id):
     consulId=curEditar.fetchone() #fetchone porque solo vamos a jalar un solo registro
     return render_template('editarAlbum.html',album=consulId)
 
+#ruta que realiza el query de actualización en la BD y redirecciona al index con msj de validación
 @app.route('/actualizar/<id>',methods=['POST']) 
 def actualizar(id): 
    if request.method == 'POST':
@@ -57,16 +59,34 @@ def actualizar(id):
         Vanio=request.form['txtAnio']
 
         curAct=mysql.connection.cursor()
-        curAct.execute=('update albums set titulo=%s, artista=%s, anio=%s where id = %s', (Vtitulo, Vartista, Vanio,id))
+        curAct.execute('update albums set titulo=%s, artista=%s, anio=%s where id = %s', (Vtitulo, Vartista, Vanio,id))
         mysql.connection.commit()
 
         flash('Album actualizado en la base de datos correctamente')
         return redirect(url_for('index'))
-     
+   
+@app.route('/eliminaralbum/<id>') 
+def eliminaralbum(id):
+    curEditar=mysql.connection.cursor()
+    curEditar.execute('select * from albums where id = %s',(id,))
+    consulId=curEditar.fetchone() #fetchone porque solo vamos a jalar un solo registro
+    return render_template('eliminaralbum.html',album=consulId)
+ 
 
 
-@app.route('/eliminar') 
-def eliminar():
+@app.route('/eliminar/<id>',methods=['POST']) 
+def eliminar(id):
+    if request.method=='POST':
+      curEliminar=mysql.connection.cursor()
+      curEliminar.execute('delete from albums where id = %s',(id,))
+      mysql.connection.commit()
+    #consulId=curEliminar.fetchone() #fetchone porque solo vamos a jalar un solo registro
+    
+    flash('Album eliminado correctamente de la BD')
+    return redirect(url_for('index'))
+
+"""@app.route('/eliminar/<id>', methods=['POST']) 
+def eliminar(id):
     if request.method == 'POST':
         Vtitulo=request.form['txtTitulo']
         Vartista=request.form['txtArtista']
@@ -74,7 +94,7 @@ def eliminar():
         
         curEliminar=mysql.connection.cursor()
         curEliminar.execute=('delete albums set titulo=%s, artista=%s, anio=%s where id = %s', (Vtitulo, Vartista, Vanio,id))
-    return redirect(url_for('index'))   
+    return redirect(url_for('index'))   """
 
 #Líneas que ejectuan el servidor
 if __name__== '__main__':
