@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="index.html"></a>
+    <title>Actualizar producto</title>
+</head>
+<body>
+   
+    <center>    
+        <h3>Frutas registradas</h3>
+        <br>
+        <table>
+         <thead>
+          <tr>
+            <td>Id:</td>
+            <td>Fruta:</td>
+            <td>Temporada:</td>
+            <td>Precio:</td>
+            <td>Stock:</td>
+          </tr>
+         </thead>
+        </center>
+        <tbody> 
+          {%for fru in listFrutas %}
+          <tr>
+            <td>{{ fru.0 }}</td>
+            <td>{{ fru.1 }}</td>
+            <td>{{ fru.2 }}</td>
+            <td>{{ fru.3 }}</td>
+            <td>{{ fru.4 }}</td>
+        
+            <td>
+              <a href="/editar/{{ fru.0 }}">Editar</a>
+              <a href="/eliminar">Eliminar</a>
+            </td>
+          </tr>
+        
+          {%endfor %}
+        </tbody>
+        </table>
+
+    
+</body>
+</html>
