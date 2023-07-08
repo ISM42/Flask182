@@ -85,16 +85,7 @@ def eliminar(id):
     flash('Album eliminado correctamente de la BD')
     return redirect(url_for('index'))
 
-"""@app.route('/eliminar/<id>', methods=['POST']) 
-def eliminar(id):
-    if request.method == 'POST':
-        Vtitulo=request.form['txtTitulo']
-        Vartista=request.form['txtArtista']
-        Vanio=request.form['txtAnio']
-        
-        curEliminar=mysql.connection.cursor()
-        curEliminar.execute=('delete albums set titulo=%s, artista=%s, anio=%s where id = %s', (Vtitulo, Vartista, Vanio,id))
-    return redirect(url_for('index'))   """
+
 
 #Líneas que ejectuan el servidor
 if __name__== '__main__':
