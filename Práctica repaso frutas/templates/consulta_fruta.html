@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRUTERÍA "LA TORONJITA"</title>
+</head>
+<body>
+    {%with mensajes=get_flashed_messages()%}
+      {% if mensajes%}
+        {%for msj in mensajes%}
+        <h3> {{msj}} </h3>
+        {%endfor%}
+      {%endif%}
+    {%endwith%}
+    <br>
+    <br>
+    <center><h1> Frutería "La toronjita"</h1></center>
+    <br>
+    <br>
+    <center><h3> Buscar producto </h3></center>
+    <br>
+    <center>
+    <form action="/consultafruta" method="POST">
+<input type="text" name="txtFruta" placeholder="Ingresa fruta">
+
+
+<button type="submit"> Buscar </button>
+<br>
+<br>  
+<br>
+<br>
+<center>
+
+</center>
+
+</center>
+    </form>
+    <br>
+    <br>
+
+
+
+
+</body>
+</html>
