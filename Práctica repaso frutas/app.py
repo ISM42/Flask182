@@ -35,12 +35,19 @@ def guardar():
     flash('Producto agregado correctamente')
     return redirect(url_for('index'))
      
-@app.route('/editar/<id>',methods=['POST','GET']) 
+@app.route('/inventario') 
+def inventario():
+    cur=mysql.connection.cursor()
+    cur.execute('select * from tbfrutas')
+    consulId=cur.fetchall() 
+    return render_template('inventario.html',listFrutas=consulId)
+
+@app.route('/editar/<id>') 
 def editar(id):
     curEditar=mysql.connection.cursor()
     curEditar.execute('select * from tbfrutas where id = %s',(id,))
     consulId=curEditar.fetchone() 
-    return render_template('inventario.html',fruta=consulId)
+    return render_template('actualizar.html',fruta=consulId)
 
 @app.route('/actualizar/<id>',methods=['POST']) 
 def actualizar(id): 
@@ -51,16 +58,21 @@ def actualizar(id):
         _stock=request.form['txtStock']
 
         curAct=mysql.connection.cursor()
-        curAct.execute=('update tbfrutas set fruta=%s, temporada=%s, precio=%s, stock =%s where id = %s', (_fruta,_temporada, _precio, _stock ,id))
+        curAct.execute('update tbfrutas set fruta=%s, temporada=%s, precio=%s, stock =%s where id = %s', (_fruta,_temporada, _precio, _stock ,id))
         mysql.connection.commit()
 
         flash('Producto actualizado en la base de datos correctamente')
         return redirect(url_for('index'))
      
+@app.route('/eliminarfruta/<id>') 
+def eliminarfruta(id):
+    curEditar=mysql.connection.cursor()
+    curEditar.execute('select * from tbfrutas where id = %s',(id,))
+    consulId=curEditar.fetchone() 
+    return render_template('eliminarfruta.html',fruta=consulId)
 
-
-@app.route('/eliminar') 
-def eliminar():
+@app.route('/eliminar/<id>', methods=['POST'])
+def eliminar(id):
     if request.method == 'POST':
         _fruta=request.form['txtFruta']
         _temporada=request.form['txtTemporada']
@@ -68,12 +80,39 @@ def eliminar():
         _stock=request.form['txtStock']
         
         curEliminar=mysql.connection.cursor()
-        curEliminar.execute=('delete from tbfrutas set fruta=%s, temporada=%s, precio=%s, stock=%s where id = %s', (_fruta,_temporada, _precio, _stock,id))
+        curEliminar.execute('delete from tbfrutas  where id = %s', (id))
         mysql.connection.commit()
 
         flash('Producto eliminado en la base de datos correctamente')
     return redirect(url_for('index'))   
 
+@app.route('/buscador') 
+def buscador():
+    #cur=mysql.connection.cursor()
+   # cur.execute('select * from tbfrutas')
+    #consulId=cur.fetchall() 
+    return render_template('consulta_fruta.html')
+
+@app.route('/consultafruta', methods=['POST','GET']) 
+def consultafruta():
+    if request.method == 'POST':
+        _fruta=request.form['txtFruta']
+          
+        curbuscar=mysql.connection.cursor()
+        curbuscar.execute('select * from tbfrutas where fruta like %s',(_fruta,))
+   
+        resultadoBusqueda=curbuscar.fetchone() 
+  #cur.close()
+    return render_template('consulta_fruta.html',_fruta='_txtFruta' )
+    return redirect(url_for('index'))
+
+@app.route('/resultadobusqueda') 
+def resultadobusqueda():
+    curbuscar=mysql.connection.cursor()
+    curbuscar.execute('select * from tbfrutas where fruta like %s',(_fruta,)) #REVISAR PARÁMETRO
+    resultadoBusqueda=curbuscar.fetchone() 
+
+    return render_template('consulta_fruta.html',_fruta='_txtFruta')
 
 if __name__== '__main__':
     app.run(port=5000,debug=True)  

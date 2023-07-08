@@ -24,7 +24,7 @@
     <form action="/guardar" method="POST">
 <input type="text" name="txtFruta" placeholder="Ingresa fruta">
 <input type="text" name="txtTemporada" placeholder="Ingresa temporada">
-<input type="number" name="txtPrecio" placeholder="Ingresa precio">
+<input type="number" name="txtPrecio" placeholder="Ingresa precio" step="any">
 <input type="number" name="txtStock" placeholder="Ingresa cantidad">
 
 <button type="submit"> Guardar </button>
@@ -33,8 +33,10 @@
 <br>
 <br>
 <center>
-<a href="/actualizar/">Ver inventario completo</a>
-<a href="/eliminar">Consultar producto especifico</a>
+
+<a href="/inventario">Ver inventario completo</a>
+<a href="/buscador">Buscar producto especifico</a>
+
 </center>
 
 </center>
