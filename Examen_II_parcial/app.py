@@ -40,11 +40,9 @@ def inventario():
     mysql.connection.commit()
 
     consulta_inv=inv.fetchall() 
-    return render_template('inventario.html',listaFlores=consulta_inv)
+    return render_template('consulta.html',listaFlor=consulta_inv)
 
-    return render_template('consulta.html')     
-
-    
+      
 @app.route('/vactualizar/<id>') 
 def editar(id):
     editar=mysql.connection.cursor()
@@ -61,17 +59,19 @@ def actualizar(id):
        _precio=request.form['txtPrecio']
 
        curAct=mysql.connection.cursor()
-       curAct.execute('update tbflores set nombre=%s, cantidad=%s, precio=%s where id = %s', (_nombre,_cantidad,_precio))
+       curAct.execute('update tbflores set nombre=%s, cantidad=%s, precio=%s where id = %s', (_nombre,_cantidad,_precio,id))
        mysql.connection.commit()
 
        flash('Producto actualizado en la base de datos correctamente')
        return redirect(url_for('index'))
    
-@app.route('/veliminar') 
-def eliminaralbum():
-   
-    return render_template('eliminar_producto.html')
+@app.route('/veliminar/<id>') 
+def eliminarProducto(id):
+    eliminar=mysql.connection.cursor()
+    eliminar.execute('select * from tbflores where id = %s',(id,))
+    consulta=eliminar.fetchone()
  
+    return render_template('eliminar_producto.html',flores=consulta)
 
 
 @app.route('/eliminar/<id>',methods=['POST']) 
