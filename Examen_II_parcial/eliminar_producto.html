@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar producto</title>
+</head>
+<body>
+   
+    <center>
+    <br>
+    <h1> Eliminar producto </h1>
+    <br>
+    <br>
+    <form action="/eliminar/{{flores.0}}" method="POST">
+        <input type="text" name="txtNombre" value="{{flores.1}}">
+        <input type="number" name="txtCantidad" value="{{flores.2}}">
+        <input type="number" name="txtPrecio" value="{{flores.3}}">
+        
+        <button type="submit"> Eliminar </button>
+        <a href=/><button type="button"> Cancelar </button></a>
+        
+            </form>
+    </center>
+</body>
+</html>
+
+
+________________

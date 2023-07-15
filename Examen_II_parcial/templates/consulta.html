@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta inventario</title>
+</head>
+<body>
+</form>
+<br>
+<br>
+<center>
+<h1>Inventario</h1>
+<br>
+<table>
+<thead>
+<tr>
+<td>Id:</td>
+<td>Nombre:</td>
+<td>Cantidad:</td>
+<td>Precio:</td>
+</tr>
+</thead>
+
+<tbody> 
+{%for flor in listaFlor %}
+<tr>
+<td>{{ flor.0 }}</td>
+<td>{{ flor.1 }}</td>
+<td>{{ flor.2 }}</td>
+<td>{{ flor.3 }}</td>
+
+<td>
+  <a href="/vactualizar/{{ flor.0 }}">Editar</a>
+  <a href="/veliminar/{{ flor.0 }}">Eliminar</a>
+</td>
+</tr>
+
+{%endfor %}
+</tbody>
+</table>
+</center>
+
+</body>
+</html>
